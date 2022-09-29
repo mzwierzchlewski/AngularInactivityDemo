@@ -1,0 +1,7 @@
+<div *ngIf="lastActiveDate$ | async as lastActiveDate; else loading">
+    <p>Last active {{ lastActiveDate | amTimeAgo }}.</p>
+  </div>
+  
+  <ng-template #loading>
+    <p>Initialising...</p>
+  </ng-template>  
