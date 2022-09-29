@@ -1,0 +1,10 @@
+<div *ngIf="{ loggedIn: loggedIn$ | async } as loginStatus">
+  <ng-container *ngIf="loginStatus.loggedIn">
+    <p>Logged in! 😊</p>
+  </ng-container>
+  <ng-container *ngIf="!loginStatus.loggedIn">
+    <p>Not logged in! 🙁</p>
+  </ng-container>
+  <button (click)="logIn()" [disabled]="loginStatus.loggedIn">Login</button>
+</div>
+  
